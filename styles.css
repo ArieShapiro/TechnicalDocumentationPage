@@ -1,0 +1,25 @@
+body::-webkit-scrollbar {
+    display: none;
+}
+
+body {
+    display: flex;
+}
+
+nav {
+    width: 30%;
+    height: 100vh;
+    overflow: auto;
+}
+
+main {
+    width: 70%;
+    height: 100vh;
+    overflow: auto;
+}
+
+@media (max-width: 420px){
+    body{
+        display: block;
+    }
+}
