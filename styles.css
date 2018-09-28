@@ -19,10 +19,11 @@ body {
     font-weight: bold;
 }
 
-nav {
+nav:not(header) {
     width: 20%;
     height: 100vh;
     overflow: auto;
+    
 }
 
 main {
