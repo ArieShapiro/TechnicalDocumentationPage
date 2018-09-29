@@ -1,39 +1,58 @@
 /* get rid of the global page scroller */
 
 body::-webkit-scrollbar {
-    display: none;
+  display: none;
 }
 
 body {
-    display: flex;
-    font-family: Nunito;
+  display: flex;
+  font-family: Nunito;
+  margin: 0;
 }
 
 #navbar {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: auto;
 }
 
-#navbar header {
-    font-size: xx-large;
-    font-weight: bold;
+#navbar a {
+    text-decoration: none;
+    color: #6e6864;
+    border-top: 1px solid gray;
+    padding: 7%;
+}
+#navbar a:active {
+    color: #6e6864;
+}
+#navbar a:visited {
+    color: #6e6864;
+}
+.header-and-nav header {
+  font-size: xx-large;
+  font-weight: bold;
 }
 
-nav:not(header) {
-    width: 20%;
-    height: 100vh;
-    overflow: auto;
-    
+.header-and-nav {
+  width: 30%;
+  border-right: 2px solid gray;
+}
+header {
+  overflow: hidden;
+}
+
+nav {
 }
 
 main {
-    width: 80%;
-    height: 100vh;
-    overflow: auto;
+  width: 80%;
+  height: 100vh;
+  overflow: auto;
 }
 
 @media (max-width: 420px) {
-    body {
-        display: block;
-    }
+  body {
+    display: block;
+  }
 }
