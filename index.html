@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="styles.css">
     <!-- Google Font Nunito -->
-    <link href='https://fonts.googleapis.com/css?family=Nunito' rel='stylesheet'>
+    <!-- <link href='https://fonts.googleapis.com/css?family=Nunito' rel='stylesheet'> -->
     <title>Technical Documentation Page</title>
 </head>
 
@@ -28,7 +28,7 @@
             <a class="nav-link" href="#Debug">Debug</a>
             <a class="nav-link" href="#Node_techniques">Node techniques</a>
             <a class="nav-link" href="#A_Simple_Node_Server">A Simple Node Server</a>
-            <a class="nav-link" href="#Introducing_Expressjs">Introducing Express.js</a>
+            <a class="nav-link" href="#Introducing_Express.js">Introducing Express.js</a>
             <a class="nav-link" href="#Server_side_rendering">Server side rendering</a>
             <a class="nav-link" href="#Submitting_Forms">Submitting Forms</a>
             <a class="nav-link" href="#Express_bodyParser">Express bodyParser</a>
@@ -36,13 +36,13 @@
             <a class="nav-link" href="#Session">Session</a>
             <a class="nav-link" href="#NodeJS_REST_API">NodeJS REST API</a>
             <a class="nav-link" href="#NodeJS_Scalability">NodeJS Scalability</a>
-            <a class="nav-link" href="#NPM_the_pains">NPM – the pains</a>
-            <a class="nav-link" href="#NPM_Security_Concerns">NPM – Security Concerns</a>
+            <a class="nav-link" href="#NPM_the_pains">NPM the pains</a>
+            <a class="nav-link" href="#NPM_Security_Concerns">NPM Security Concerns</a>
             <a class="nav-link" href="#How_to_address_those?">How to address those?</a>
             <a class="nav-link" href="#NPM_Scripts">NPM Scripts</a>
             <a class="nav-link" href="#Progressive_web_Apps">Progressive web Apps</a>
-            <a class="nav-link" href="#Server_Connectivity_is_a_big_unknow">Server Connectivity is a big unknown</a>
-            <a class="nav-link" href="#Service_Workers_Promo">Service Workers -Promo</a>
+            <a class="nav-link" href="#Server_Connectivity_is_a_big_unknown">Server Connectivity is a big unknown</a>
+            <a class="nav-link" href="#Service_Workers_Promo">Service Workers Promo</a>
             <a class="nav-link" href="#Registering_a_Service_Worker">Registering a Service Worker</a>
             <a class="nav-link" href="#Why_we_should_care?">Why we should care?</a>
         </nav>
@@ -53,16 +53,18 @@
         <section id="Introduction" class="main-section">
             <header>Introduction</header>
 
-            <pre>                       Node.js
-• Node.js (Born 2009) is an open source platform built
-  on Chrome's JavaScript runtime (V8) for easily
-  building fast, scalable network applications.
-• Node.js uses an event-driven, non-blocking I/O
-  model that makes it lightweight and efficient
-• Suitable for data-intensive real-time applications that
-  run across distributed devices
-  – Which is what's everyone is building these days (-:</pre>
-            <p></p>
+            <p><i>Node.js</i></p>
+            <ul>
+                <li> Node.js (Born 2009) is an open source platform built
+                    on Chrome's JavaScript runtime (V8) for easily
+                    building fast, scalable network applications.</li>
+                <li>Node.js uses an event-driven, non-blocking I/O
+                    model that makes it lightweight and efficient</li>
+                <li>Suitable for data-intensive real-time applications that
+                    run across distributed devices</li>
+            </ul>
+            <p>– Which is what's everyone is building these days (-:</p>
+
             <code></code>
             <ul>
                 <li></li>
@@ -71,28 +73,52 @@
         </section>
         <section id="Philosophy" class="main-section">
             <header>Philosophy</header>
-            <pre>
-• The Core is small and all the rest is
-  Community and Natural Selection
-  
-• Small modules, helps taking the DRY
-  principle to a new level
-– Another characteristic of many Node.js modules is the fact that
-  they are created to be used rather than extended
-– Uncomplicated, practical approach is preferred here upon a pure,
-  flawless design.
-            </pre>
-            <p></p>
-            <p></p>
-            <code></code>
+
             <ul>
-                <li></li>
-                <li></li>
+                <li>The Core is small and all the rest is
+                    Community and Natural Selection</li>
+                <li>Small modules, helps taking the DRY
+                    principle to a new level</li>
             </ul>
+
+            <p>– Another characteristic of many Node.js modules is the fact that
+                they are created to be used rather than extended</p>
+            <p>– Uncomplicated, practical approach is preferred here upon a pure,
+                flawless design.</p>
+
+            <h3>Starting an NPM project</h3>
+
+            <ul>
+                <li>
+                    <p>npm init</p>
+                    <p>– npm init –yes</p>
+                    <p>ask me no question I tell you no lies mode.</p>
+                </li>
+                <li>
+                    <p> npm install</p>
+                    <p> – Shortcut: npm i</p>
+                    <p> – Example: npm i lodash</p>
+                </li>
+                <li>
+                    <p> npm ls</p>
+                    <p>– Lists the dependencies</p>
+                    <p>– To show only top level:</p>
+                    <p>npm ls --depth=0</p>
+                </li>
+                <li>Note: npm installs from local cache (instead of network) if exists</li>
+            </ul>
+
+            <code></code>
+
         </section>
         <section id="NPM" class="main-section">
             <header>NPM</header>
-            <p></p>
+            <p style="text-align: center;">Node Packaged Modules</p>
+            <div class="npm-imgs">
+                <img class="npm1" src="imgs/npm.png" alt="npm" width="" height="">
+                <img class="npm2" src="imgs/npm1.png" alt="express-packedges">
+            </div>
+
             <p></p>
             <code></code>
             <ul>
@@ -190,7 +216,7 @@
                 <li></li>
             </ul>
         </section>
-        <section id="Introducing_Expressjs" class="main-section">
+        <section id="Introducing_Express.js" class="main-section">
             <header>Introducing Express.js</header>
             <p></p>
             <p></p>
@@ -271,7 +297,7 @@
             </ul>
         </section>
         <section id="NPM_the_pains" class="main-section">
-            <header>NPM – the pains</header>
+            <header>NPM the pains</header>
             <p></p>
             <p></p>
             <code></code>
@@ -281,7 +307,7 @@
             </ul>
         </section>
         <section id="NPM_Security_Concerns" class="main-section">
-            <header>NPM – Security Concerns</header>
+            <header>NPM Security Concerns</header>
             <p></p>
             <p></p>
             <code></code>

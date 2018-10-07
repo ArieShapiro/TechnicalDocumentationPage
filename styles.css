@@ -1,13 +1,51 @@
-/* get rid of the global page scroller */
+.npm1 {
+  width: 80%;
+  height: auto;
+  display: block;
+  margin: auto;
+}
 
+.npm2 {
+  width: 20%;
+  height: auto;
+  margin-left: 5%;
+}
+
+.npm-imgs {
+  display: flex;
+  width: 90%;
+  align-items: self-start;
+}
+
+/* get rid of the global page scroller */
 body::-webkit-scrollbar {
   display: none;
 }
 
 body {
   display: flex;
-  font-family: Nunito;
+  /* font-family: Nunito; */
+  font-family: sans-serif;
   margin: 0;
+}
+
+li {
+  margin-bottom: 4%;
+}
+
+nav a {
+  font-size: 1.4em;
+}
+
+section p,
+section li
+ {
+  color: #4d4e53;
+  font-size: 1.4em;
+}
+
+section li p{
+  font-size: 1em;
 }
 
 #navbar {
@@ -18,28 +56,29 @@ body {
 }
 
 #navbar a {
-    text-decoration: none;
-    color: #6e6864;
-    border-top: 1px solid gray;
-    padding: 7%;
+  text-decoration: none;
+  color: #6e6864;
+  border-top: 1px solid gray;
+  padding: 7%;
 }
 #navbar a:active {
-    color: #6e6864;
+  color: #6e6864;
 }
 #navbar a:visited {
-    color: #6e6864;
+  color: #6e6864;
 }
 .header-and-nav header {
   font-size: xx-large;
   font-weight: bold;
+  text-align: center;
 }
 
 .header-and-nav {
   width: 30%;
   border-right: 2px solid gray;
 }
-header {
-  overflow: hidden;
+section header {
+  font-size: xx-large;
 }
 
 nav {
@@ -49,6 +88,10 @@ main {
   width: 80%;
   height: 100vh;
   overflow: auto;
+}
+
+.main-section {
+  margin-left: 5%;
 }
 
 @media (max-width: 420px) {
