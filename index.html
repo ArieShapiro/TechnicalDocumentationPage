@@ -50,7 +50,9 @@
 
 
     <main id="main-doc">
+
         <section id="Introduction" class="main-section">
+
             <header>Introduction</header>
 
             <p><i>Node.js</i></p>
@@ -63,14 +65,11 @@
                 <li>Suitable for data-intensive real-time applications that
                     run across distributed devices</li>
             </ul>
+
             <p>– Which is what's everyone is building these days (-:</p>
 
-            <code></code>
-            <ul>
-                <li></li>
-                <li></li>
-            </ul>
         </section>
+
         <section id="Philosophy" class="main-section">
             <header>Philosophy</header>
 
@@ -86,31 +85,10 @@
             <p>– Uncomplicated, practical approach is preferred here upon a pure,
                 flawless design.</p>
 
-            <h3>Starting an NPM project</h3>
-
-            <ul>
-                <li>
-                    <p>npm init</p>
-                    <p>– npm init –yes</p>
-                    <p>ask me no question I tell you no lies mode.</p>
-                </li>
-                <li>
-                    <p> npm install</p>
-                    <p> – Shortcut: npm i</p>
-                    <p> – Example: npm i lodash</p>
-                </li>
-                <li>
-                    <p> npm ls</p>
-                    <p>– Lists the dependencies</p>
-                    <p>– To show only top level:</p>
-                    <p>npm ls --depth=0</p>
-                </li>
-                <li>Note: npm installs from local cache (instead of network) if exists</li>
-            </ul>
-
             <code></code>
 
         </section>
+
         <section id="NPM" class="main-section">
             <header>NPM</header>
             <p style="text-align: center;">Node Packaged Modules</p>
@@ -119,53 +97,170 @@
                 <img class="npm2" src="imgs/npm1.png" alt="express-packedges">
             </div>
 
-            <p></p>
-            <code></code>
-            <ul>
-                <li></li>
-                <li></li>
-            </ul>
+            <h3>Starting an NPM project</h3>
+
+            <code>
+                <div>
+                        <ul>
+                                <li>
+                                    <p>npm init</p>
+                                    <p>– npm init –yes</p>
+                                    <p>ask me no question I tell you no lies mode.</p>
+                                </li>
+                                <li>
+                                    <p> npm install</p>
+                                    <p> – Shortcut: npm i</p>
+                                    <p> – Example: npm i lodash</p>
+                                </li>
+                                <li>
+                                    <p> npm ls</p>
+                                    <p>– Lists the dependencies</p>
+                                    <p>– To show only top level:</p>
+                                    <p>npm ls --depth=0</p>
+                                </li>
+                            </ul>
+                </div>
+            </code>
+
+            <p>Note: npm installs from local cache (instead of network) if exists</p>
+
         </section>
+
         <section id="Using_Lodash" class="main-section">
             <header>Using Lodash</header>
-            <p></p>
-            <p></p>
-            <code></code>
-            <ul>
-                <li></li>
-                <li></li>
-            </ul>
+            <p>Lodash is a popular utility library, it has some useful functions, lest see
+                few of them.</p>
+            <p>e.g. here is the times() function:</p>
+            <code>
+                <div>
+                  <p>function getRandomScore() {</p>
+                  <p>&nbsp&nbsp return Math.round(Math.random() * 100);</p>
+                  <p>}</p>
+                  <p>var result = _.times(5, getRandomScore);</p>
+                  <p>// result => [64, 70, 29, 10, 23]</p>
+                </div>
+            </code>
+
+            <h3>Using Lodash - keyBy</h3>
+
+            <p>Making a map from an array of objects:</p>
+
+            <code>
+                <div>
+                  <p>var posts = [</p>
+                  <p>&nbsp&nbsp { id: '1abc', title: 'First blog post', content: '...' },</p>
+                  <p>&nbsp&nbsp { id: '2abc', title: 'Second blog post', content: '...' },</p>
+                  <p>];</p>
+                  <p>var postsMap = _.keyBy(posts, 'id');</p>
+                  <p>var post = postsMap['2abc']</p>
+                  <p>// post -> { id: '2abc', title: 'Second blog post', content: '...' }</p>
+                </div>
+            </code>
+
+            <h3>Using Lodash - debounce</h3>
+
+            <p>Debouncing events:</p>
+            <code>
+                <div>
+                    <p>var elEmail = document.getElementById('email-input');</p>
+                    <p>elEmail.addEventListener('keyup', _.debounce(validateEmail, 500));</p>
+                </div>
+            </code>
+
         </section>
+
         <section id="Node.js_Module_system" class="main-section">
             <header>Node.js Module system</header>
-            <p></p>
-            <p></p>
-            <code></code>
+
+            <p>To include a module, use the require() function:</p>
+            <code>
+                <div>
+                        <p>var colors = require('colors');</p>
+                        <p>console.log('Hello'.green);</p>
+                        <p>console.log('I like it when in rains'.underline.red)</p>
+                        <p>console.log('inverse the color'.inverse);</p>
+                        <p>console.log('OMG Rainbows!'.rainbow);</p>
+                </div>
+            </code>
+
+            <p>Lets try some more:</p>
+
             <ul>
-                <li></li>
-                <li></li>
+                <li>geocoder</li>
+                <li>beeper</li>
             </ul>
+
+            <h3>Creating your own module:</h3>
+
+            <code>
+                <div>
+                    <p>function sayHello() {</p>
+                    <p>&nbsp&nbsp console.log('Hello')</p>
+                    <p>}</p>
+                    <p></p>
+                    <p>function getAns() {</p>
+                    <p>&nbsp&nbsp return axios.get('https://yesno.wtf/api')</p>
+                    <p>&nbsp&nbsp&nbsp&nbsp .then(res => res.data)</p>
+                    <p>}</p>
+                    <p></p>
+                    <p>module.exports = {</p>
+                    <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp sayHello,</p>
+                    <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp getAns</p>
+                    <p>}</p>
+                </div>
+            </code>
+
         </section>
+
         <section id="Globals" class="main-section">
             <header>Globals</header>
-            <p></p>
-            <p></p>
-            <code></code>
             <ul>
-                <li></li>
-                <li></li>
+                <li>The module system exposes a special variable called global,
+                    which can be used for this purpose.</li>
+                <li>Everything that is assigned to this variable will be available in
+                    the global scope.</li>
             </ul>
+
+            <p style="text-align: center;">Remember that:</p>
+            <p style="text-align: center;"><i>global state should be avoided whenever possible</i></p>
+
+            <code>
+                <div>
+                    <p>// Node.js global vars are put on the 'global' object</p>
+                    <p>global.userName = 'Puki';</p>
+                </div>
+            </code>
+
+            <p>__dirname – global that contains the curr folder path, full path</p>
+
         </section>
+
         <section id="nodemon" class="main-section">
-            <header>nodemon</header>
+            <header>Nodemon</header>
+
+            <p>Used in development to re-run the app on every file change.
+                (Its like live-server for your node.js)</p>
             <p></p>
-            <p></p>
-            <code></code>
-            <ul>
-                <li></li>
-                <li></li>
-            </ul>
+
+            <div class="install-nodemon">
+                <code>
+                    <div>
+                        <p>Install using:</p>
+                        <p>npm install –g nodemon</p>
+                    </div>
+                </code>
+                
+                <img src="imgs/nodemon.png" alt="">
+            </div>
+
+            <code>
+                <div>
+                    <p>nodemon --ignore "./data" server.js</p>
+                </div>
+            </code>
+
         </section>
+
         <section id="Async_IO_is_everywhere" class="main-section">
             <header>Async IO is everywhere</header>
             <p></p>

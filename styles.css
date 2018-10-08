@@ -38,14 +38,34 @@ nav a {
 }
 
 section p,
-section li
- {
+section li {
   color: #4d4e53;
   font-size: 1.4em;
 }
 
-section li p{
+section p {
+  margin-left: 8%;
+}
+
+section li p {
   font-size: 1em;
+}
+
+code div {
+  background-color: rgb(245, 245, 245);
+  margin-right: 5%;
+  padding: 1%;
+}
+
+.install-nodemon {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.install-nodemon img {
+  width: 30%;
+  height: 30%;
 }
 
 #navbar {
@@ -59,7 +79,7 @@ section li p{
   text-decoration: none;
   color: #6e6864;
   border-top: 1px solid gray;
-  padding: 7%;
+  padding: 3% 7%;
 }
 #navbar a:active {
   color: #6e6864;
