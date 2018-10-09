@@ -249,7 +249,7 @@
                         <p>npm install –g nodemon</p>
                     </div>
                 </code>
-                
+
                 <img src="imgs/nodemon.png" alt="">
             </div>
 
@@ -263,223 +263,308 @@
 
         <section id="Async_IO_is_everywhere" class="main-section">
             <header>Async IO is everywhere</header>
-            <p></p>
-            <p></p>
-            <code></code>
-            <ul>
-                <li></li>
-                <li></li>
-            </ul>
+            <p>There are different ways to do I/O in Node.js,
+                asynchronous IO is very common in node:</p>
+
+            <code>
+                <div>
+                    <p>fs.stat(fileName, cb)</p>
+                    <p>fs.readFile(fileName,[options], cb)</p>
+                    <p>fs.watch(filename[, options][, cb])</p>
+                    <p></p>
+                    <p>// reading a big file with stream</p>
+                    <p>stream = fs.createReadStream('bigfile.txt');</p>
+                    <p>stream.on('data', function(data){});</p>
+                </div>
+            </code>
+
         </section>
         <section id="The_resolving_algorithm" class="main-section">
             <header>The resolving algorithm</header>
-            <p></p>
-            <p></p>
-            <code></code>
             <ul>
-                <li></li>
-                <li></li>
+                <li>
+                    <h3>File modules</h3>
+                    <p>– moduleName starts with "/" - an absolute path to the module. NOT USED.</p>
+                    <p>– moduleName starts with "./" - a relative path, starting from the requiring
+                        module.</p>
+                </li>
+                <li>
+                    <h3>Core modules</h3>
+                    <p>– ModuleName is Not prefixed with "/" or "./“
+                        looks within the core Node.js modules.</p>
+                </li>
+                <li>
+                    <h3>Package modules</h3>
+                    <p>– If no core module is found, the search continues by looking into the first
+                        node_modules directory that is found navigating up in the directory structure
+                        starting from the requiring module.</p>
+                    <p>– Continue to search up in the directory tree, until it reaches the root of the
+                        file-system.</p>
+                </li>
+                <li>
+                    <h3>NODE_PATH env variable</h3>
+                    <p>– node will search those paths for modules if they are not found elsewhere</p>
+                </li>
             </ul>
+
         </section>
+
         <section id="Debug" class="main-section">
+
             <header>Debug</header>
-            <p></p>
-            <p></p>
-            <code></code>
-            <ul>
-                <li></li>
-                <li></li>
-            </ul>
+
+            <h3>Easy, with VSCode!</h3>
+
+            <img src="imgs/debbug.png" alt="Debugging Screenshot">
+
         </section>
+
         <section id="Node_techniques" class="main-section">
+
             <header>Node techniques</header>
-            <p></p>
-            <p></p>
-            <code></code>
+
+            <h3>continuation-passing style (CPS)</h3>
+
             <ul>
-                <li></li>
-                <li></li>
+                <li>CPS is a general technique In functional
+                    programming.</li>
+                <li>It means that a result is propagated by passing
+                    it to another function (the callback), instead of
+                    directly returning it to the caller</li>
             </ul>
+
+            <code>
+                <div>
+                    <p>function sum(a, b) {</p>
+                    <p>&nbsp&nbsp return a + b;</p>
+                    <p>}</p>
+                    <p></p>
+                    <p>function sum(a, b, cb) {</p>
+                    <p>&nbsp&nbsp cb(a + b);</p>
+                    <p>}</p>
+                </div>
+            </code>
+
+            <h3>Conventions - Callbacks come last</h3>
+
+            <p>For the sake of readability,
+                a callback param to a function will always come last,
+                example:</p>
+
+            <code>
+                        <div>
+                            <p>fs.readFile(filename, [options], callback)</p>
+                        </div>
+                    </code>
+
+            <h3>Conventions - Errors</h3>
+
+            <p>Error comes first:</p>
+            <p>– The error produced by a CPS function is passed as the first
+                argument of the callback (null or undefined when no errors)</p>
+            <p>– Any actual result is passed starting from the second argument.</p>
+            <p>– Example:</p>
+
+            <code>
+                        <div>
+                            <p>fs.readFile('puki.txt', function(err, data) {</p>
+                            <p>&nbsp&nbsp if ( err ) handleError(err);</p>
+                            <p>&nbsp&nbsp else processData(data);</p>
+                            <p>});</p>
+                        </div>
+                    </code>
+
+            <h3>Propagating Errors</h3>
+
+            <ul>
+                <li>Propagating errors in synchronous, direct style functions is done as usual with the
+                    throw command. This causes the error to go up in the call stack until it's caught by
+                    a try-catch clause</li>
+                <li>BUT, In asynchronous CPS, error propagation is done by passing the error to the
+                    next callback in the CPS chain:</li>
+            </ul>
+
+            <code>
+                        <div>
+                            <p>function getJSONFromFile(filename, cb) {</p>
+                            <p>&nbsp&nbsp fs.readFile(filename, function(err, data) {</p>
+                            <p></p>
+                            <p>&nbsp&nbsp&nbsp&nbsp if ( err ) return cb(err);</p>
+                            <p>&nbsp&nbsp&nbsp&nbsp var json;</p>
+                            <p></p>
+                            <p>&nbsp&nbsp&nbsp&nbsp try {</p>
+                            <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp json = JSON.parse(data);</p>
+                            <p>&nbsp&nbsp&nbsp&nbsp } catch (e) {</p>
+                            <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp return cb(e);</p>
+                            <p>&nbsp&nbsp&nbsp&nbsp }</p>
+                            <p>&nbsp&nbsp&nbsp&nbsp cb(null, json); // everything went fine</p>
+                            <p>&nbsp&nbsp });</p>
+                            <p>};</p>
+                        </div>
+                    </code>
+
+            <h3>Require a JSON file</h3>
+
+            <p>Actually, reading a JSON file is easy with:</p>
+
+            <code>
+                <div>
+                    <p>var todos = require('../data/todo.json')</p>
+                </div>
+            </code>
+
+
+
         </section>
         <section id="A_Simple_Node_Server" class="main-section">
             <header>A Simple Node Server</header>
-            <p></p>
-            <p></p>
-            <code></code>
+
+            <h3>A Simple Node Server</h3>
+
             <ul>
-                <li></li>
-                <li></li>
+                <li>In this basic web server example, many client connections can
+                    be handled concurrently.</li>
+                <li>When someone connects, then it executes the callback - Each
+                    connection is only a small heap allocation.</li>
             </ul>
+
+            <code>
+                <div>
+                    <p>var http = require('http');</p>
+                    <p></p>
+                    <p>http.createServer(function (req, res) {</p>
+                    <p>&nbsp&nbsp res.writeHead(200, {'Content-Type': 'text/plain'});</p>
+                    <p>&nbsp&nbsp res.end('Hello misterBIT\n');</p>
+                    <p>}).listen(1337, "127.0.0.1");</p>
+                    <p></p>
+                    <p>console.log('Server running at http://127.0.0.1:1337/');</p>
+                </div>
+            </code>
+
         </section>
         <section id="Introducing_Express.js" class="main-section">
             <header>Introducing Express.js</header>
-            <p></p>
-            <p></p>
-            <code></code>
-            <ul>
-                <li></li>
-                <li></li>
-            </ul>
+            <h3>Express is a fast, unopinionated, minimalist web framework for
+                Node.js</h3>
+
+            <code>
+                        <div>
+                            <p>const express = require('express')</p>
+                            <p>const app = express()</p>
+                            <p></p>
+                            <p>app.get('/', (req, res) => res.send('Hello!􀅨))</p>
+                            <p></p>
+                            <p>app.listen(3000, () => console.log('Server listening on port 3000!'))</p>
+                        </div>
+                    </code>
+
         </section>
+
         <section id="Server_side_rendering" class="main-section">
+
             <header>Server side rendering</header>
+
+            <h3>In Node, server side rendering can be done with the module ejs</h3>
+
+            <code>
+                <div>
+                    <p>app.get('/admin', (req, res) => {</p>
+                    <p>&nbsp&nbsp res.render(VIEW_DIR +'admin.ejs',</p>
+                    <p>&nbsp&nbsp&nbsp&nbsp { greet: 'Yes Master', users : theUsers });</p>
+                    <p>})</p>
+                </div>
+            </code>
             <p></p>
-            <p></p>
-            <code></code>
-            <ul>
-                <li></li>
-                <li></li>
-            </ul>
+            <code>
+                    <div>
+                        <p><%= greet %></p>
+                        <p><span><</span>ul<span>></p>
+                        <p>&nbsp&nbsp <% users.forEach(function(user){ %></p>
+                        <p>&nbsp&nbsp <span><</span>li<span>></p>
+                        <p>&nbsp&nbsp&nbsp&nbsp <%=user.fullName %></p>
+                        <p>&nbsp&nbsp </span><span><</span>/li></p>
+                        <p>&nbsp&nbsp <% }); %></p>
+                        <p></span><span><</span>/ul></p>
+                    </div>
+                </code>
+
         </section>
         <section id="Submitting_Forms" class="main-section">
             <header>Submitting Forms</header>
-            <p></p>
-            <p></p>
-            <code></code>
-            <ul>
-                <li></li>
-                <li></li>
-            </ul>
+
+            <h3>Using HTML Forms:</h3>
+
+            <code>
+                <div>
+                    <p></p>
+                    <p></p>
+                    <p></p>
+                    <p></p>
+                    <p></p>
+                    <p></p>
+                    <p></p>
+                    <p></p>
+                    <p></p>
+                    <p></p>
+                </div>
+            </code>
+
         </section>
         <section id="Express_bodyParser" class="main-section">
             <header>Express bodyParser</header>
-            <p></p>
-            <p></p>
-            <code></code>
-            <ul>
-                <li></li>
-                <li></li>
-            </ul>
+
         </section>
         <section id="Cookies" class="main-section">
             <header>Cookies</header>
-            <p></p>
-            <p></p>
-            <code></code>
-            <ul>
-                <li></li>
-                <li></li>
-            </ul>
+
         </section>
         <section id="Session" class="main-section">
             <header>Session</header>
-            <p></p>
-            <p></p>
-            <code></code>
-            <ul>
-                <li></li>
-                <li></li>
-            </ul>
+
         </section>
         <section id="NodeJS_REST_API" class="main-section">
             <header>NodeJS REST API</header>
-            <p></p>
-            <p></p>
-            <code></code>
-            <ul>
-                <li></li>
-                <li></li>
-            </ul>
+
         </section>
         <section id="NodeJS_Scalability" class="main-section">
             <header>NodeJS Scalability</header>
-            <p></p>
-            <p></p>
-            <code></code>
-            <ul>
-                <li></li>
-                <li></li>
-            </ul>
+
         </section>
         <section id="NPM_the_pains" class="main-section">
             <header>NPM the pains</header>
-            <p></p>
-            <p></p>
-            <code></code>
-            <ul>
-                <li></li>
-                <li></li>
-            </ul>
+
         </section>
         <section id="NPM_Security_Concerns" class="main-section">
             <header>NPM Security Concerns</header>
-            <p></p>
-            <p></p>
-            <code></code>
-            <ul>
-                <li></li>
-                <li></li>
-            </ul>
+
         </section>
         <section id="How_to_address_those?" class="main-section">
             <header>How to address those?</header>
-            <p></p>
-            <p></p>
-            <code></code>
-            <ul>
-                <li></li>
-                <li></li>
-            </ul>
+
         </section>
         <section id="NPM_Scripts" class="main-section">
             <header>NPM Scripts</header>
-            <p></p>
-            <p></p>
-            <code></code>
-            <ul>
-                <li></li>
-                <li></li>
-            </ul>
+
         </section>
         <section id="Progressive_web_Apps" class="main-section">
             <header>Progressive web Apps</header>
-            <p></p>
-            <p></p>
-            <code></code>
-            <ul>
-                <li></li>
-                <li></li>
-            </ul>
+
         </section>
         <section id="Server_Connectivity_is_a_big_unknown" class="main-section">
             <header>Server Connectivity is a big unknown</header>
-            <p></p>
-            <p></p>
-            <code></code>
-            <ul>
-                <li></li>
-                <li></li>
-            </ul>
+
         </section>
         <section id="Service_Workers_Promo" class="main-section">
             <header>Service Workers Promo</header>
-            <p></p>
-            <p></p>
-            <code></code>
-            <ul>
-                <li></li>
-                <li></li>
-            </ul>
+
         </section>
         <section id="Registering_a_Service_Worker" class="main-section">
             <header>Registering a Service Worker</header>
-            <p></p>
-            <p></p>
-            <code></code>
-            <ul>
-                <li></li>
-                <li></li>
-            </ul>
+
         </section>
         <section id="Why_we_should_care?" class="main-section">
             <header>Why we should care?</header>
-            <p></p>
-            <p></p>
-            <code></code>
-            <ul>
-                <li></li>
-                <li></li>
-            </ul>
+
         </section>
 
 

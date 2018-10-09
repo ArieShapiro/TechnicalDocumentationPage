@@ -34,7 +34,7 @@ li {
 }
 
 nav a {
-  font-size: 1.4em;
+  font-size: 1.3em;
 }
 
 section p,
@@ -113,6 +113,11 @@ main {
 .main-section {
   margin-left: 5%;
 }
+
+#Debug img {
+  width: 96%;
+}
+
 
 @media (max-width: 420px) {
   body {
