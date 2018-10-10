@@ -40,7 +40,7 @@ nav a {
 section p,
 section li {
   color: #4d4e53;
-  font-size: 1.4em;
+  font-size: 1.3em;
 }
 
 section p {
@@ -81,12 +81,15 @@ code div {
   border-top: 1px solid gray;
   padding: 3% 7%;
 }
+
 #navbar a:active {
   color: #6e6864;
 }
+
 #navbar a:visited {
   color: #6e6864;
 }
+
 .header-and-nav header {
   font-size: xx-large;
   font-weight: bold;
@@ -99,9 +102,7 @@ code div {
 }
 section header {
   font-size: xx-large;
-}
-
-nav {
+  margin: 4%;
 }
 
 main {
@@ -118,9 +119,66 @@ main {
   width: 96%;
 }
 
+#Cookies img {
+  width: 96%;
+}
 
-@media (max-width: 420px) {
+.responsive-header {
+  display: none;
+}
+
+.responsive-header-and-nav {
+  display: none;
+}
+
+@media (max-width: 900px) {
   body {
+    flex-direction: column;
+  }
+
+  .header-and-nav {
+    display: none;
+  }
+
+  main {
+    width: 100%;
+  }
+
+  .responsive-header {
     display: block;
+    font-size: xx-large;
+    font-weight: bold;
+    text-align: center;
+    margin: 2%;
+  }
+
+  .header-and-nav header {
+    display: none;
+  }
+
+  .responsive-header-and-nav {
+    width: 100%;
+    max-height: 200px;
+    overflow: overlay;
+    border-bottom: 3px solid;
+    border-top: 3px solid;
+    display: block;
+  }
+
+  #navbar a {
+    padding: 1% 7%;
+  }
+
+  nav a {
+    font-size: 1.1em;
+  }
+
+  section p,
+  section li {
+    font-size: 1.1em;
+  }
+
+  code div{
+    font-size: 0.8em;
   }
 }

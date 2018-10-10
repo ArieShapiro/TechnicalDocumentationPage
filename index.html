@@ -6,14 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="styles.css">
+
     <!-- Google Font Nunito -->
     <!-- <link href='https://fonts.googleapis.com/css?family=Nunito' rel='stylesheet'> -->
+
     <title>Technical Documentation Page</title>
 </head>
 
 <body>
+
+    <!--************************* Only if responsive ****************************-->
+    <header class="responsive-header">Node.js Documentation</header>
+    <!--*************************************************************************-->
+
     <div class="header-and-nav">
+
         <header>Node.js Documentation</header>
+
         <nav id="navbar">
             <header></header>
             <a class="nav-link" href="#Introduction">Introduction</a>
@@ -46,16 +55,58 @@
             <a class="nav-link" href="#Registering_a_Service_Worker">Registering a Service Worker</a>
             <a class="nav-link" href="#Why_we_should_care?">Why we should care?</a>
         </nav>
+
     </div>
 
 
     <main id="main-doc">
+
+        <!--**************************Only if responsive*****************************-->
+        <div class="responsive-header-and-nav">
+
+
+            <nav id="navbar">
+                <header></header>
+                <a class="nav-link" href="#Introduction">Introduction</a>
+                <a class="nav-link" href="#Philosophy">Philosophy</a>
+                <a class="nav-link" href="#NPM">NPM</a>
+                <a class="nav-link" href="#Using_Lodash">Using Lodash</a>
+                <a class="nav-link" href="#Node.js_Module_system">Node.js Module system</a>
+                <a class="nav-link" href="#Globals">Globals</a>
+                <a class="nav-link" href="#nodemon">nodemon</a>
+                <a class="nav-link" href="#Async_IO_is_everywhere">Async IO is everywhere</a>
+                <a class="nav-link" href="#The_resolving_algorithm">The resolving algorithm</a>
+                <a class="nav-link" href="#Debug">Debug</a>
+                <a class="nav-link" href="#Node_techniques">Node techniques</a>
+                <a class="nav-link" href="#A_Simple_Node_Server">A Simple Node Server</a>
+                <a class="nav-link" href="#Introducing_Express.js">Introducing Express.js</a>
+                <a class="nav-link" href="#Server_side_rendering">Server side rendering</a>
+                <a class="nav-link" href="#Submitting_Forms">Submitting Forms</a>
+                <a class="nav-link" href="#Express_bodyParser">Express bodyParser</a>
+                <a class="nav-link" href="#Cookies">Cookies</a>
+                <a class="nav-link" href="#Session">Session</a>
+                <a class="nav-link" href="#NodeJS_REST_API">NodeJS REST API</a>
+                <a class="nav-link" href="#NodeJS_Scalability">NodeJS Scalability</a>
+                <a class="nav-link" href="#NPM_the_pains">NPM the pains</a>
+                <a class="nav-link" href="#NPM_Security_Concerns">NPM Security Concerns</a>
+                <a class="nav-link" href="#How_to_address_those?">How to address those?</a>
+                <a class="nav-link" href="#NPM_Scripts">NPM Scripts</a>
+                <a class="nav-link" href="#Progressive_web_Apps">Progressive web Apps</a>
+                <a class="nav-link" href="#Server_Connectivity_is_a_big_unknown">Server Connectivity is a big unknown</a>
+                <a class="nav-link" href="#Service_Workers_Promo">Service Workers Promo</a>
+                <a class="nav-link" href="#Registering_a_Service_Worker">Registering a Service Worker</a>
+                <a class="nav-link" href="#Why_we_should_care?">Why we should care?</a>
+            </nav>
+
+        </div>
+        <!--*************************************************************************-->
 
         <section id="Introduction" class="main-section">
 
             <header>Introduction</header>
 
             <p><i>Node.js</i></p>
+
             <ul>
                 <li> Node.js (Born 2009) is an open source platform built
                     on Chrome's JavaScript runtime (V8) for easily
@@ -71,6 +122,7 @@
         </section>
 
         <section id="Philosophy" class="main-section">
+
             <header>Philosophy</header>
 
             <ul>
@@ -85,13 +137,14 @@
             <p>– Uncomplicated, practical approach is preferred here upon a pure,
                 flawless design.</p>
 
-            <code></code>
-
         </section>
 
         <section id="NPM" class="main-section">
+
             <header>NPM</header>
+
             <p style="text-align: center;">Node Packaged Modules</p>
+
             <div class="npm-imgs">
                 <img class="npm1" src="imgs/npm.png" alt="npm" width="" height="">
                 <img class="npm2" src="imgs/npm1.png" alt="express-packedges">
@@ -100,88 +153,92 @@
             <h3>Starting an NPM project</h3>
 
             <code>
-                <div>
-                        <ul>
-                                <li>
-                                    <p>npm init</p>
-                                    <p>– npm init –yes</p>
-                                    <p>ask me no question I tell you no lies mode.</p>
-                                </li>
-                                <li>
-                                    <p> npm install</p>
-                                    <p> – Shortcut: npm i</p>
-                                    <p> – Example: npm i lodash</p>
-                                </li>
-                                <li>
-                                    <p> npm ls</p>
-                                    <p>– Lists the dependencies</p>
-                                    <p>– To show only top level:</p>
-                                    <p>npm ls --depth=0</p>
-                                </li>
-                            </ul>
-                </div>
-            </code>
+                    <div>
+                            <ul>
+                                    <li>
+                                        <p>npm init</p>
+                                        <p>– npm init –yes</p>
+                                        <p>ask me no question I tell you no lies mode.</p>
+                                    </li>
+                                    <li>
+                                        <p> npm install</p>
+                                        <p> – Shortcut: npm i</p>
+                                        <p> – Example: npm i lodash</p>
+                                    </li>
+                                    <li>
+                                        <p> npm ls</p>
+                                        <p>– Lists the dependencies</p>
+                                        <p>– To show only top level:</p>
+                                        <p>npm ls --depth=0</p>
+                                    </li>
+                                </ul>
+                    </div>
+                </code>
 
             <p>Note: npm installs from local cache (instead of network) if exists</p>
 
         </section>
 
         <section id="Using_Lodash" class="main-section">
+
             <header>Using Lodash</header>
+
             <p>Lodash is a popular utility library, it has some useful functions, lest see
                 few of them.</p>
             <p>e.g. here is the times() function:</p>
+
             <code>
-                <div>
-                  <p>function getRandomScore() {</p>
-                  <p>&nbsp&nbsp return Math.round(Math.random() * 100);</p>
-                  <p>}</p>
-                  <p>var result = _.times(5, getRandomScore);</p>
-                  <p>// result => [64, 70, 29, 10, 23]</p>
-                </div>
-            </code>
+                    <div>
+                      <p>function getRandomScore() {</p>
+                      <p>&nbsp&nbsp return Math.round(Math.random() * 100);</p>
+                      <p>}</p>
+                      <p>var result = _.times(5, getRandomScore);</p>
+                      <p>// result => [64, 70, 29, 10, 23]</p>
+                    </div>
+                </code>
 
             <h3>Using Lodash - keyBy</h3>
 
             <p>Making a map from an array of objects:</p>
 
             <code>
-                <div>
-                  <p>var posts = [</p>
-                  <p>&nbsp&nbsp { id: '1abc', title: 'First blog post', content: '...' },</p>
-                  <p>&nbsp&nbsp { id: '2abc', title: 'Second blog post', content: '...' },</p>
-                  <p>];</p>
-                  <p>var postsMap = _.keyBy(posts, 'id');</p>
-                  <p>var post = postsMap['2abc']</p>
-                  <p>// post -> { id: '2abc', title: 'Second blog post', content: '...' }</p>
-                </div>
-            </code>
+                    <div>
+                      <p>var posts = [</p>
+                      <p>&nbsp&nbsp { id: '1abc', title: 'First blog post', content: '...' },</p>
+                      <p>&nbsp&nbsp { id: '2abc', title: 'Second blog post', content: '...' },</p>
+                      <p>];</p>
+                      <p>var postsMap = _.keyBy(posts, 'id');</p>
+                      <p>var post = postsMap['2abc']</p>
+                      <p>// post -> { id: '2abc', title: 'Second blog post', content: '...' }</p>
+                    </div>
+                </code>
 
             <h3>Using Lodash - debounce</h3>
 
             <p>Debouncing events:</p>
             <code>
-                <div>
-                    <p>var elEmail = document.getElementById('email-input');</p>
-                    <p>elEmail.addEventListener('keyup', _.debounce(validateEmail, 500));</p>
-                </div>
-            </code>
+                    <div>
+                        <p>var elEmail = document.getElementById('email-input');</p>
+                        <p>elEmail.addEventListener('keyup', _.debounce(validateEmail, 500));</p>
+                    </div>
+                </code>
 
         </section>
 
         <section id="Node.js_Module_system" class="main-section">
+
             <header>Node.js Module system</header>
 
             <p>To include a module, use the require() function:</p>
             <code>
-                <div>
-                        <p>var colors = require('colors');</p>
-                        <p>console.log('Hello'.green);</p>
-                        <p>console.log('I like it when in rains'.underline.red)</p>
-                        <p>console.log('inverse the color'.inverse);</p>
-                        <p>console.log('OMG Rainbows!'.rainbow);</p>
-                </div>
-            </code>
+                    <div>
+                            <p>var colors = require('colors');</p>
+                            <p>console.log('Hello'.green);</p>
+                            <p>console.log('I like it when in rains'.underline.red)</p>
+                            <p>console.log('inverse the color'.inverse);</p>
+                            <p>console.log('OMG Rainbows!'.rainbow);</p>
+                    </div>
+                </code>
 
             <p>Lets try some more:</p>
 
@@ -193,22 +250,22 @@
             <h3>Creating your own module:</h3>
 
             <code>
-                <div>
-                    <p>function sayHello() {</p>
-                    <p>&nbsp&nbsp console.log('Hello')</p>
-                    <p>}</p>
-                    <p></p>
-                    <p>function getAns() {</p>
-                    <p>&nbsp&nbsp return axios.get('https://yesno.wtf/api')</p>
-                    <p>&nbsp&nbsp&nbsp&nbsp .then(res => res.data)</p>
-                    <p>}</p>
-                    <p></p>
-                    <p>module.exports = {</p>
-                    <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp sayHello,</p>
-                    <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp getAns</p>
-                    <p>}</p>
-                </div>
-            </code>
+                    <div>
+                        <p>function sayHello() {</p>
+                        <p>&nbsp&nbsp console.log('Hello')</p>
+                        <p>}</p>
+                        <p></p>
+                        <p>function getAns() {</p>
+                        <p>&nbsp&nbsp return axios.get('https://yesno.wtf/api')</p>
+                        <p>&nbsp&nbsp&nbsp&nbsp .then(res => res.data)</p>
+                        <p>}</p>
+                        <p></p>
+                        <p>module.exports = {</p>
+                        <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp sayHello,</p>
+                        <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp getAns</p>
+                        <p>}</p>
+                    </div>
+                </code>
 
         </section>
 
@@ -225,11 +282,11 @@
             <p style="text-align: center;"><i>global state should be avoided whenever possible</i></p>
 
             <code>
-                <div>
-                    <p>// Node.js global vars are put on the 'global' object</p>
-                    <p>global.userName = 'Puki';</p>
-                </div>
-            </code>
+                    <div>
+                        <p>// Node.js global vars are put on the 'global' object</p>
+                        <p>global.userName = 'Puki';</p>
+                    </div>
+                </code>
 
             <p>__dirname – global that contains the curr folder path, full path</p>
 
@@ -244,20 +301,20 @@
 
             <div class="install-nodemon">
                 <code>
-                    <div>
-                        <p>Install using:</p>
-                        <p>npm install –g nodemon</p>
-                    </div>
-                </code>
+                        <div>
+                            <p>Install using:</p>
+                            <p>npm install –g nodemon</p>
+                        </div>
+                    </code>
 
                 <img src="imgs/nodemon.png" alt="">
             </div>
 
             <code>
-                <div>
-                    <p>nodemon --ignore "./data" server.js</p>
-                </div>
-            </code>
+                    <div>
+                        <p>nodemon --ignore "./data" server.js</p>
+                    </div>
+                </code>
 
         </section>
 
@@ -267,16 +324,16 @@
                 asynchronous IO is very common in node:</p>
 
             <code>
-                <div>
-                    <p>fs.stat(fileName, cb)</p>
-                    <p>fs.readFile(fileName,[options], cb)</p>
-                    <p>fs.watch(filename[, options][, cb])</p>
-                    <p></p>
-                    <p>// reading a big file with stream</p>
-                    <p>stream = fs.createReadStream('bigfile.txt');</p>
-                    <p>stream.on('data', function(data){});</p>
-                </div>
-            </code>
+                    <div>
+                        <p>fs.stat(fileName, cb)</p>
+                        <p>fs.readFile(fileName,[options], cb)</p>
+                        <p>fs.watch(filename[, options][, cb])</p>
+                        <p></p>
+                        <p>// reading a big file with stream</p>
+                        <p>stream = fs.createReadStream('bigfile.txt');</p>
+                        <p>stream.on('data', function(data){});</p>
+                    </div>
+                </code>
 
         </section>
         <section id="The_resolving_algorithm" class="main-section">
@@ -334,16 +391,16 @@
             </ul>
 
             <code>
-                <div>
-                    <p>function sum(a, b) {</p>
-                    <p>&nbsp&nbsp return a + b;</p>
-                    <p>}</p>
-                    <p></p>
-                    <p>function sum(a, b, cb) {</p>
-                    <p>&nbsp&nbsp cb(a + b);</p>
-                    <p>}</p>
-                </div>
-            </code>
+                    <div>
+                        <p>function sum(a, b) {</p>
+                        <p>&nbsp&nbsp return a + b;</p>
+                        <p>}</p>
+                        <p></p>
+                        <p>function sum(a, b, cb) {</p>
+                        <p>&nbsp&nbsp cb(a + b);</p>
+                        <p>}</p>
+                    </div>
+                </code>
 
             <h3>Conventions - Callbacks come last</h3>
 
@@ -352,10 +409,10 @@
                 example:</p>
 
             <code>
-                        <div>
-                            <p>fs.readFile(filename, [options], callback)</p>
-                        </div>
-                    </code>
+                            <div>
+                                <p>fs.readFile(filename, [options], callback)</p>
+                            </div>
+                        </code>
 
             <h3>Conventions - Errors</h3>
 
@@ -366,13 +423,13 @@
             <p>– Example:</p>
 
             <code>
-                        <div>
-                            <p>fs.readFile('puki.txt', function(err, data) {</p>
-                            <p>&nbsp&nbsp if ( err ) handleError(err);</p>
-                            <p>&nbsp&nbsp else processData(data);</p>
-                            <p>});</p>
-                        </div>
-                    </code>
+                            <div>
+                                <p>fs.readFile('puki.txt', function(err, data) {</p>
+                                <p>&nbsp&nbsp if ( err ) handleError(err);</p>
+                                <p>&nbsp&nbsp else processData(data);</p>
+                                <p>});</p>
+                            </div>
+                        </code>
 
             <h3>Propagating Errors</h3>
 
@@ -385,33 +442,33 @@
             </ul>
 
             <code>
-                        <div>
-                            <p>function getJSONFromFile(filename, cb) {</p>
-                            <p>&nbsp&nbsp fs.readFile(filename, function(err, data) {</p>
-                            <p></p>
-                            <p>&nbsp&nbsp&nbsp&nbsp if ( err ) return cb(err);</p>
-                            <p>&nbsp&nbsp&nbsp&nbsp var json;</p>
-                            <p></p>
-                            <p>&nbsp&nbsp&nbsp&nbsp try {</p>
-                            <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp json = JSON.parse(data);</p>
-                            <p>&nbsp&nbsp&nbsp&nbsp } catch (e) {</p>
-                            <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp return cb(e);</p>
-                            <p>&nbsp&nbsp&nbsp&nbsp }</p>
-                            <p>&nbsp&nbsp&nbsp&nbsp cb(null, json); // everything went fine</p>
-                            <p>&nbsp&nbsp });</p>
-                            <p>};</p>
-                        </div>
-                    </code>
+                            <div>
+                                <p>function getJSONFromFile(filename, cb) {</p>
+                                <p>&nbsp&nbsp fs.readFile(filename, function(err, data) {</p>
+                                <p></p>
+                                <p>&nbsp&nbsp&nbsp&nbsp if ( err ) return cb(err);</p>
+                                <p>&nbsp&nbsp&nbsp&nbsp var json;</p>
+                                <p></p>
+                                <p>&nbsp&nbsp&nbsp&nbsp try {</p>
+                                <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp json = JSON.parse(data);</p>
+                                <p>&nbsp&nbsp&nbsp&nbsp } catch (e) {</p>
+                                <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp return cb(e);</p>
+                                <p>&nbsp&nbsp&nbsp&nbsp }</p>
+                                <p>&nbsp&nbsp&nbsp&nbsp cb(null, json); // everything went fine</p>
+                                <p>&nbsp&nbsp });</p>
+                                <p>};</p>
+                            </div>
+                        </code>
 
             <h3>Require a JSON file</h3>
 
             <p>Actually, reading a JSON file is easy with:</p>
 
             <code>
-                <div>
-                    <p>var todos = require('../data/todo.json')</p>
-                </div>
-            </code>
+                    <div>
+                        <p>var todos = require('../data/todo.json')</p>
+                    </div>
+                </code>
 
 
 
@@ -429,17 +486,17 @@
             </ul>
 
             <code>
-                <div>
-                    <p>var http = require('http');</p>
-                    <p></p>
-                    <p>http.createServer(function (req, res) {</p>
-                    <p>&nbsp&nbsp res.writeHead(200, {'Content-Type': 'text/plain'});</p>
-                    <p>&nbsp&nbsp res.end('Hello misterBIT\n');</p>
-                    <p>}).listen(1337, "127.0.0.1");</p>
-                    <p></p>
-                    <p>console.log('Server running at http://127.0.0.1:1337/');</p>
-                </div>
-            </code>
+                    <div>
+                        <p>var http = require('http');</p>
+                        <p></p>
+                        <p>http.createServer(function (req, res) {</p>
+                        <p>&nbsp&nbsp res.writeHead(200, {'Content-Type': 'text/plain'});</p>
+                        <p>&nbsp&nbsp res.end('Hello misterBIT\n');</p>
+                        <p>}).listen(1337, "127.0.0.1");</p>
+                        <p></p>
+                        <p>console.log('Server running at http://127.0.0.1:1337/');</p>
+                    </div>
+                </code>
 
         </section>
         <section id="Introducing_Express.js" class="main-section">
@@ -448,15 +505,15 @@
                 Node.js</h3>
 
             <code>
-                        <div>
-                            <p>const express = require('express')</p>
-                            <p>const app = express()</p>
-                            <p></p>
-                            <p>app.get('/', (req, res) => res.send('Hello!􀅨))</p>
-                            <p></p>
-                            <p>app.listen(3000, () => console.log('Server listening on port 3000!'))</p>
-                        </div>
-                    </code>
+                            <div>
+                                <p>const express = require('express')</p>
+                                <p>const app = express()</p>
+                                <p></p>
+                                <p>app.get('/', (req, res) => res.send('Hello!􀅨))</p>
+                                <p></p>
+                                <p>app.listen(3000, () => console.log('Server listening on port 3000!'))</p>
+                            </div>
+                        </code>
 
         </section>
 
@@ -467,26 +524,26 @@
             <h3>In Node, server side rendering can be done with the module ejs</h3>
 
             <code>
-                <div>
-                    <p>app.get('/admin', (req, res) => {</p>
-                    <p>&nbsp&nbsp res.render(VIEW_DIR +'admin.ejs',</p>
-                    <p>&nbsp&nbsp&nbsp&nbsp { greet: 'Yes Master', users : theUsers });</p>
-                    <p>})</p>
-                </div>
-            </code>
-            <p></p>
-            <code>
                     <div>
-                        <p><%= greet %></p>
-                        <p><span><</span>ul<span>></p>
-                        <p>&nbsp&nbsp <% users.forEach(function(user){ %></p>
-                        <p>&nbsp&nbsp <span><</span>li<span>></p>
-                        <p>&nbsp&nbsp&nbsp&nbsp <%=user.fullName %></p>
-                        <p>&nbsp&nbsp </span><span><</span>/li></p>
-                        <p>&nbsp&nbsp <% }); %></p>
-                        <p></span><span><</span>/ul></p>
+                        <p>app.get('/admin', (req, res) => {</p>
+                        <p>&nbsp&nbsp res.render(VIEW_DIR +'admin.ejs',</p>
+                        <p>&nbsp&nbsp&nbsp&nbsp { greet: 'Yes Master', users : theUsers });</p>
+                        <p>})</p>
                     </div>
                 </code>
+            <p></p>
+            <code>
+                        <div>
+                            <p><%= greet %></p>
+                            <p><span><</span>ul<span>></p>
+                            <p>&nbsp&nbsp <% users.forEach(function(user){ %></p>
+                            <p>&nbsp&nbsp <span><</span>li<span>></p>
+                            <p>&nbsp&nbsp&nbsp&nbsp <%=user.fullName %></p>
+                            <p>&nbsp&nbsp </span><span><</span>/li></p>
+                            <p>&nbsp&nbsp <% }); %></p>
+                            <p></span><span><</span>/ul></p>
+                        </div>
+                    </code>
 
         </section>
         <section id="Submitting_Forms" class="main-section">
@@ -495,46 +552,161 @@
             <h3>Using HTML Forms:</h3>
 
             <code>
-                <div>
-                    <p></p>
-                    <p></p>
-                    <p></p>
-                    <p></p>
-                    <p></p>
-                    <p></p>
-                    <p></p>
-                    <p></p>
-                    <p></p>
-                    <p></p>
-                </div>
-            </code>
+                    <div>
+                        <p><span><</span>form action="/todo/save" method="post"></form></p>
+                        <p>&nbsp&nbsp <span><</span>input name="id" type="hidden" value="<%=todo.id %>" /></p>
+                        <p>&nbsp&nbsp <span><</span>input name="txt" type="text" value="<%=todo.txt %>" /></p>
+                        <p>&nbsp&nbsp&nbsp&nbsp <span><</span>label></p>
+                        <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <span><</span>input name="completed" value="true" type="checkbox"</p>
+                        <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <%= (todo.completed)? 'checked' : '' %> /></p>
+                        <p>&nbsp&nbsp&nbsp&nbsp Done</p>
+                        <p>&nbsp&nbsp&<span><</span>/label></p>
+                        <p>&nbsp&nbsp&<span><</span>button type="submit">Save</button></p>
+                        <p><span><</span>/form></p>
+                    </div>
+                </code>
 
         </section>
+
         <section id="Express_bodyParser" class="main-section">
+
             <header>Express bodyParser</header>
 
+            <h3>Express bodyParser is the module responsible for handling requests
+                body:</h3>
+
+            <code>
+                            <div>
+                                <p>// Support forms submit</p>
+                                <p>app.use(bodyParser.urlencoded({ extended: true }));</p>
+                                <p>// Than in an app.post():</p>
+                                <p>const formData = req.body</p>
+                            </div>
+                        </code>
+
         </section>
+
         <section id="Cookies" class="main-section">
+
             <header>Cookies</header>
 
-        </section>
-        <section id="Session" class="main-section">
-            <header>Session</header>
+            <ul>
+                <li>Cookie is an ancient mechanism, that is still used today</li>
+                <li>It allows the server to save information about the current user, in
+                    the user’s browser</li>
+                <li>This information will be automatically sent by the browser, in the
+                    following requests</li>
+                <li>Cookies are per domain</li>
+            </ul>
+
+            <h3>Cookies Usages</h3>
+
+            <p>Cookies are mainly used for three purposes:</p>
+
+            <ul>
+                <li>Personalization</li>
+                <p>– User preferences, themes, and other settings</p>
+                <li>Tracking</li>
+                <p>– Recording and analyzing user behavior</p>
+                <li>Session management</li>
+                <p>– Logins, shopping carts, game scores, or anything else the server
+                    should remember</p>
+            </ul>
+
+            <h3>Using Cookies</h3>
+
+            <ul>
+                <li>Lets use cookies:</li>
+                <code>
+                        <div>
+                            <p>res.cookie('lastVisitedTodoId', todo.id)</p>
+                        </div>
+                    </code>
+                <li>Add the express cookieParser:</li>
+                <code>
+                        <div>
+                            <p>var cookieParser = require('cookie-parser');</p>
+                            <p>app.use(cookieParser());</p>
+                        </div>
+                    </code>
+                <li>Then we can read the cookie from the request:</li>
+                <code>
+                            <div>
+                                <p>req.cookies.lastVisitedTodoId</p>
+                            </div>
+                        </code>
+            </ul>
+
+            <h3>Memory / Permanent Cookies</h3>
+
+            <li>Cookie are deleted when browser closes, or they can
+                have an expire time</li>
+
+            <code>
+                            <div>
+                                <p>res.cookie(lastVisitedTodoId, todo.id, {maxAge: 60*60*1000});</p>
+                            </div>
+                        </code>
+
+            <li>You can view the cookies in the developer tools</li>
+
+            <img src="imgs/cookies-devtools.png" alt="Cookies in Dev Toolse">
+
+
 
         </section>
+
+        <section id="Session" class="main-section">
+
+            <header>Session</header>
+
+            <ul>
+                <li>The server side may choose to hold some state per
+                    connected browser (e.g – loggedinUser, shoppingCart)</li>
+                <li>This is how:</li>
+            </ul>
+
+            <code>
+                    <div>
+                        <p>app.use(cookieParser());</p>
+                        <p></p>
+                        <p>var session = require('express-session')</p>
+                        <p>app.use(session({</p>
+                        <p>&nbsp&nbsp secret: 'puki muki',</p>
+                        <p>&nbsp&nbsp resave: false,</p>
+                        <p>&nbsp&nbsp saveUninitialized: true,</p>
+                        <p>&nbsp&nbsp cookie: { secure: false }</p>
+                        <p>}))</p>
+                        <p></p>
+                        <p>app.post('/setUser', (req, res) => {</p>
+                        <p>&nbsp&nbsp req.session.nickname = req.body.nickname</p>
+                        <p>&nbsp&nbsp res.redirect('/todo');</p>
+                        <p>})</p>
+                    </div>
+                </code>
+
+        </section>
+
         <section id="NodeJS_REST_API" class="main-section">
+
             <header>NodeJS REST API</header>
 
         </section>
+
         <section id="NodeJS_Scalability" class="main-section">
+
             <header>NodeJS Scalability</header>
 
         </section>
+
         <section id="NPM_the_pains" class="main-section">
+
             <header>NPM the pains</header>
 
         </section>
+
         <section id="NPM_Security_Concerns" class="main-section">
+
             <header>NPM Security Concerns</header>
 
         </section>
@@ -542,15 +714,21 @@
             <header>How to address those?</header>
 
         </section>
+
         <section id="NPM_Scripts" class="main-section">
+
             <header>NPM Scripts</header>
 
         </section>
+
         <section id="Progressive_web_Apps" class="main-section">
+
             <header>Progressive web Apps</header>
 
         </section>
+
         <section id="Server_Connectivity_is_a_big_unknown" class="main-section">
+
             <header>Server Connectivity is a big unknown</header>
 
         </section>
@@ -569,6 +747,7 @@
 
 
     </main>
+    <!-- </div> -->
 
 
     <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
