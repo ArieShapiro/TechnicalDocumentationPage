@@ -182,3 +182,11 @@ main {
     font-size: 0.8em;
   }
 }
+
+#Session img {
+  width: 96%;
+}
+
+#NodeJS_REST_API img{
+  width: 96%;
+}
