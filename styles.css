@@ -178,7 +178,7 @@ main {
     font-size: 1.1em;
   }
 
-  code div{
+  code div {
     font-size: 0.8em;
   }
 }
@@ -187,6 +187,21 @@ main {
   width: 96%;
 }
 
-#NodeJS_REST_API img{
-  width: 96%;
+#NodeJS_REST_API img {
+  width: 22%;
+  position: relative;
+  left: 11%;
+}
+
+.js-object-notation {
+  display: flex;
+  align-items: self-end;
+}
+
+#NodeJS_REST_API img.js-object{
+  width: 50%;
+}
+
+#NodeJS_REST_API img.postman, #NodeJS_REST_API img.login-signup{
+  width: 80%;
 }
